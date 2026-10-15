@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS employee_directory;
+USE employee_directory;
+
+CREATE TABLE IF NOT EXISTS employees (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  role VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY unique_employee_email (email)
+);
